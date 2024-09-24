@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="Pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="home-index.css">
+    <link rel="shortcut icon" href="../assets/EduNois.jpg" type="image/x-icon">
+    <title>Start | Educa Noís</title>
+</head>
+<body>
+    <header>
+        <nav class="navigation">
+            <a href="" class="logo">Educa <span>Nóis</span></a>
+            <ul class="nav-menu">
+                <li class="nav-item"><a href="login.html">Já tem conta? Acesse já</a></li>
+            </ul>
+            <div class="menu">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <section class="home">
+            <div class="home-text">
+                <h4 class="text-h4">Seja Bem-Vindo</h4>
+                <h1 class="text-h1">Encontre o seu sabor único de aprendizado no Educanois</h1>
+                <p>Desperte o brilho do conhecimento em sua jornada de aprendizado conosco - onde cada click é uma oportunidade de transformação</p>
+                <a href="cadastro.html" class="home-btn">Cadastre-se</a>
+            </div>
+            <div class="home-img">
+                <img src="../assets/EduNois.png" alt="">
+            </div>
+        </section>
+    </main>
+
+    <script>const menu = document.querySelector('.menu');
+        const NavMenu = document.querySelector('.nav-menu');
+        
+        menu.addEventListener('click', () => {
+            menu.classList.toggle('ativo');
+            NavMenu.classList.toggle('ativo');
+        })
+    </script>
+</body>
+</html>

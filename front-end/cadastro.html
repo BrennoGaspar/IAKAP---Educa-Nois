@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="cadastro.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="shortcut icon" href="../assets/EduNois.jpg" type="image/x-icon">
+    <title>Cadastro | Educa Nóis</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="form-image">
+            <img src="../assets/EduNois.png" alt="">
+        </div>
+        <div class="form">
+            <form action="../back-end/cadastro.php" class="cadastroForm">
+                <div class="form-header">
+                    <div class="title">
+                        <h1>Cadastre-se</h1>
+                    </div>
+                    <div class="login-button">
+                        <button><a href="login.html">Já possui login?</a></button>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <div class="input-box">
+                        <label for="firstname">Primeiro Nome</label>
+                        <input id="firstname" type="text" name="firstname" placeholder="Digite seu primeiro nome" required>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="lastname">Sobrenome</label>
+                        <input id="lastname" type="text" name="lastname" placeholder="Digite seu sobrenome" required>
+                    </div>
+                    <div class="input-box">
+                        <label for="email">E-mail</label>
+                        <input id="email" type="email" name="email" placeholder="Digite seu e-mail" required>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="number">Celular</label>
+                        <input id="number" type="tel" name="number" placeholder="(xx) xxxxx-xxxx" minlength="10" maxlength="15" required>
+                        <script>
+                            var numero1 = document.getElementById('number');
+                            numero1.addEventListener('input', () => {
+                                var limparValor1 = numero1.value.replace(/\D/g, "").substring(0, 11);
+                                var numerosArray1 = limparValor1.split("");
+                                var numeroformatado1 = "";
+                                if (numerosArray1.length > 0) {
+                                    numeroformatado1 += `(${numerosArray1.slice(0, 2).join("")})`;
+                                }
+                                if (numerosArray1.length > 2) {
+                                    numeroformatado1 += ` ${numerosArray1.slice(2, 7).join("")}`;
+                                }
+                                if (numerosArray1.length > 7) {
+                                    numeroformatado1 += `-${numerosArray1.slice(7, 11).join("")}`;
+                                }
+                                numero1.value = numeroformatado1;
+                            })
+                        </script>
+                    </div>
+
+                    <div class="input-box">
+                        <label for="password">Senha</label>
+                        <input id="Password" type="password" name="password" placeholder="Digite sua senha" required>
+                    </div>
+
+
+                    <div class="input-box">
+                        <label for="confirmPassword">Confirme sua Senha</label>
+                        <input id="confirmPassword" type="password" name="confirmPassword" placeholder="Digite sua senha novamente" required>
+                    </div>
+
+                </div>
+
+                <div class="gender-inputs">
+                    <div class="gender-title">
+                        <h6>Você é</h6>
+                    </div>
+
+                    <div class="select-dropdown">
+                        <select name="vocee" id="vocee" required>
+                          <option selected>Selecione o tipo da sua conta</option>
+                          <option value="Professor">Professor</option>
+                          <option value="Estudante">Estudante</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div id="professorFields" style="display: none;">
+                    <div class="ensino-group">
+                        <div class="input-box">
+                            <label for="rg">RG</label>
+                            <input id="rg" type="text" name="rg" placeholder="xxxxxxxx-x" maxlength="10" required>
+                            <script>
+                                var rgField = document.getElementById('rg');
+                                rgField.addEventListener('input', () => {
+                                    var numero = document.getElementById('rg');
+                                    numero.addEventListener('input', () => {
+                                        var limparValor = numero.value.replace(/\D/g, "").substring(0, 11);
+                                        var numerosArray = limparValor.split("");
+                                        var numeroformatado = "";
+                                        if (numerosArray.length > 0) {
+                                            numeroformatado += `${numerosArray.slice(0, 8).join("")}`;
+                                        }
+                                        if (numerosArray.length > 8) {
+                                            numeroformatado += `-${numerosArray.slice(8, 9).join("")}`;
+                                        }
+                                        numero.value = numeroformatado;
+                                    })
+                                });
+                            </script>
+                        </div>
+
+                        <div class="input-box">
+                            <label for="cpf">CPF</label>
+                            <input id="cpf" type="text" name="cpf" placeholder="xxx.xxx.xxx-xx" maxlength="14" required>
+                            <script>
+                                var cpfField = document.getElementById('cpf');
+                                cpfField.addEventListener('input', () => {
+                                    var numero2 = document.getElementById('cpf');
+                                    numero2.addEventListener('input', () => {
+                                        var limparValor2 = numero2.value.replace(/\D/g, "").substring(0, 11);
+                                        var numerosArray2 = limparValor2.split("");
+                                        var numeroformatado2 = "";
+                                        if (numerosArray2.length > 0) {
+                                            numeroformatado2 += `${numerosArray2.slice(0, 3).join("")}`;
+                                        }
+                                        if (numerosArray2.length > 3) {
+                                            numeroformatado2 += `.${numerosArray2.slice(3, 6).join("")}`;
+                                        }
+                                        if (numerosArray2.length > 6) {
+                                            numeroformatado2 += `.${numerosArray2.slice(6, 9).join("")}`;
+                                        }
+                                        if (numerosArray2.length > 9) {
+                                            numeroformatado2 += `-${numerosArray2.slice(9, 11).join("")}`;
+                                        }
+                                        numero2.value = numeroformatado2;
+                                    })
+                                });
+                            </script>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="continue-button">
+                    <input type="submit" id="botaocontinuar" onclick="return validarSenha()" value="Continuar">
+                </div>
+
+                <div id="error-confirmPassword" class="error-message"></div>
+
+            </form>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('vocee').addEventListener('change', function() {
+            var vocee = this.value;
+            var professorFields = document.getElementById('professorFields');
+
+            if (vocee === 'Professor') {
+                professorFields.style.display = 'block';
+            } else {
+                professorFields.style.display = 'none';
+            }
+        });
+    </script>
+
+    <script>
+        document.getElementById('vocee').addEventListener('change', function() {
+            var vocee = this.value;
+            var rgField = document.getElementById('rg');
+            var cpfField = document.getElementById('cpf');
+
+            if (vocee === 'Professor') {
+                rgField.setAttribute('required', 'required');
+                cpfField.setAttribute('required', 'required');
+            } else {
+                rgField.removeAttribute('required');
+                cpfField.removeAttribute('required');
+            }
+        });
+    </script>
+
+
+    <script>
+        function validarSenha() {
+            var senha = document.getElementById("Password").value;
+            var confirmar = document.getElementById("confirmPassword").value;
+            var errorConfirmPassword = document.getElementById("error-confirmPassword");
+
+            if (senha != confirmar) {
+                errorConfirmPassword.textContent = "As senhas não coincidem!";
+                return false;
+            } else {
+                errorConfirmPassword.textContent = "";
+                return true;
+            }
+        }
+    </script>
+
+</body>
+
+</html>

@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="login.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" integrity="sha512-xh6O/CkQoPOWDdYTDqeRdPCVd1SpvCA9XXcUnZS2FmJNp1coAFzvtCN9BmamE+4aHK8yyUHUSCcJHgXloTyT2A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <link rel="shortcut icon" href="../assets/EduNois.jpg" type="image/x-icon">
+    <title>Login | Educa Noís</title>
+</head>
+
+<body>
+
+    <div id="mensagem"></div>
+
+    <div class="container">
+        <div class="form-image">
+            <img src="../assets/EduNois.png" alt="">
+        </div>
+        <div class="form">
+            <form id="loginForm" action="../back-end/login.php">
+                <div class="form-header">
+                    <div class="title">
+                        <h1>Entrar</h1>
+                    </div>
+                    <div class="login-button">
+                        <button><a href="cadastro.html">Cadastrar-se</a></button>
+                    </div>
+                </div>
+
+                <div class="input-group">
+                    <div class="input-box">
+                        <label for="email">E-mail</label>
+                        <input id="email" type="email" name="email" placeholder="Digite seu e-mail" required>
+                    </div>
+
+                    <div class="input-box" id="password-input-box">
+                        <label for="senha">Senha</label>
+                        <input id="senha" type="password" name="password" placeholder="Digite sua senha" required>
+                    </div>
+
+                    <div class="gender-inputs">
+                        <div class="gender-title">
+                            <h6>Você é</h6>
+                        </div>
+    
+                        <div class="select-dropdown">
+                            <select name="vocee" id="vocee" required>
+                              <option selected>Selecione o tipo da sua conta</option>
+                              <option value="Professor">Professor</option>
+                              <option value="Estudante">Estudante</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="continue-button">
+                    <input type="submit" id="botaocontinuar" value="Continuar">
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function(){
+            $('#loginForm').submit(function(event){
+                event.preventDefault();
+                var formData = $(this).serialize();
+                $.ajax({
+                    url: '../back-end/login.php',
+                    type: 'POST',
+                    dataType: 'json',
+                    data: formData,
+                    success: function(response) {
+                        if (response.success) {
+                            window.location.href = 'home.html';
+                        } else {
+                            window.alert(response.message); 
+                        }
+                    },
+                    error: function(xhr, status, error) {
+                        window.alert('Erro ao fazer login: ' + error);
+                    }
+                });
+            });
+        });
+    </script>
+
+    <script>
+        window.onload = function() {
+            var urlParams = new URLSearchParams(window.location.search);
+            var success = urlParams.get('success');
+            if (success === 'true') {
+                window.alert('Cadastro realizado com sucesso!');
+            }
+        };
+    </script>
+
+</body>
+</html>
