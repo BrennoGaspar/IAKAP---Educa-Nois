@@ -77,8 +77,20 @@ body{
     font-size: 1.5rem;
 }
 
-.total{
-    padding: 2.5rem;
+.add_title{
+        padding: 0.5rem;
+        background-repeat: no-repeat;
+        display: flex;  
+        flex-direction: row;
+        gap: 8%;
+        color: white;
+        align-items: center;
+        justify-content: center;
+        height: 100px;
+        margin-top: 20px; 
+}
+
+.total form{
     background-color: #4b7a99;
     background-repeat: no-repeat;
     display: flex;
@@ -87,9 +99,9 @@ body{
     color: white;
     align-items: center;
     justify-content: center;
-    margin-top: 3%;
+    margin-top: 1%;
     width: 90vw;
-    height: 83vh;
+    height: 75vh;
 }
 .secao{
     display: flex;
@@ -115,6 +127,9 @@ h2{
     width: 30%;
     align-items: center;
     justify-content: center;
+}
+.direita{
+    text-align: center;
 }
 
 .input_email, .input_tel, .mensagem, .nome {
@@ -168,15 +183,6 @@ h1{
     justify-content: center;
 }
 
-.button_p{
-    font-family: Arial;
-    font-size: 20px;
-}
-button:hover{
-    background-color: #0c5ec9;
-    color: #e6e6e6;
-}
-
 input, textarea {
     border-radius: 15px;
     background-color: #CAE8FF;
@@ -205,14 +211,20 @@ label{
     white-space: pre-wrap; /* Mantém quebras de linha e espaços */
 }
 
-button{
+.enviar input{
     width: 180px;
     height: 55px;
     border: none;
     border-radius: 15px;
     color: white;
     background-color: #004AAD;
-    font-size: 14px;
+    font-family: Arial;
+    font-size: 19px;
+}
+
+.enviar input:hover{
+    background-color: #0c5ec9;
+    color: #e6e6e6;
 }
 
 .iconsinfo{
@@ -220,6 +232,56 @@ button{
     flex-direction: column;
     gap: 30px;
 }
+
+.custom-file-upload {
+    display: inline-block;
+    padding: 10px 20px;
+    cursor: pointer;
+    background-color: #007bff;
+    color: white;
+    border-radius: 20px;
+    border: none;
+    font-family: Arial;
+    font-size: 20px;
+}
+
+input[type="file"] {
+    display: none; /* Oculta o campo de entrada padrão */
+}
+
+.custom-button {
+    padding: 10px 20px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.custom-button:hover {
+    background-color: #218838; /* Muda a cor ao passar o mouse */
+}
+
+details {
+    display: inline-block;
+    border: 3px solid #ccc;
+    border-radius: 4px;
+    padding: 10px;
+    cursor: pointer;
+}
+
+summary {
+    font-weight: bold;
+}
+
+summary::-webkit-details-marker {
+    display: none; /* Remove o marcador padrão do summary */
+}
+
+.options {
+    padding: 10px;
+}
+
 
 /* Media Queries */
 @media (max-width: 1024px) {

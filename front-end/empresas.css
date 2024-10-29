@@ -28,7 +28,7 @@ html {
 }
 
 body{
-    background-color: rgb(58, 103, 228)
+    background-color: #3f6884;
 }
 
 section {
@@ -98,7 +98,7 @@ section {
     position: relative;
 }
 .navigation .logo{
-    color: #0831a1;
+    color: #3f6884;
     font-size: 1.7rem;
     font-weight: 600;
 }
@@ -106,7 +106,7 @@ section {
     font-family: 'Sprite Graffiti', sans-serif;
 }
 .logo span{
-    color: #0b42d8;
+    color: #3f6884;
     font-family: 'Sprite Graffiti', sans-serif;                           
 }
 .navigation ul{
@@ -115,13 +115,18 @@ section {
     gap: 5rem;
 }
 .navigation ul li a{
-    color: var(--dark);
+    color: #3f6884;
     font-size: 17px;
     font-weight: 500;
     transition: all 0.5s;
 }
+
+.nav-item.active a {
+    color: #2b485b;;
+}
+
 .navigation ul li a:hover{
-    color: var(--red);
+    color: #2b485b;
 }
 .navigation i{
     cursor: pointer;
@@ -165,13 +170,16 @@ section {
 }
 
 .home-text .text-h1 {
+    color: white;
     font-size: 4rem;
-    margin-bottom: 1rem;
+    margin-bottom: 3rem;
     line-height: 4rem;
     margin-top: -140%;
 }
 
 .home-text p {
+    font-size: 1.5rem;
+    text-align: justify;
     margin-bottom: 4rem;
     color: #fff;
 }
@@ -224,6 +232,13 @@ a {
 .nav-menu {
     margin-bottom: -0.1%;
     gap: 0;
+}
+
+.col{
+    transition: transform 2s;
+}
+.col:hover{
+    transform: translateY(-10%)
 }
 
 /* Adicionando media queries para responsividade */

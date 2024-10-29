@@ -15,9 +15,9 @@
     --dark:#1e1c2a;
 }
 body{
-    color: var(--dark);
-    background: rgb(58, 103, 228);
+    background-color: #3f6884;
 }
+
 .navigation{
     display: flex;
     align-items: center;
@@ -30,7 +30,7 @@ body{
     position: fixed;
 }
 .navigation .logo{
-    color: var(--red);
+    color: #3f6884;
     font-size: 1.7rem;
     font-weight: 600;
 }
@@ -38,7 +38,7 @@ body{
     font-family: 'Sprite Graffiti', sans-serif;
 }
 .logo span{
-    color: #0b42d8;
+    color: #3f6884;
     font-family: 'Sprite Graffiti', sans-serif;                           
 }
 .navigation ul{
@@ -47,13 +47,13 @@ body{
     gap: 5rem;
 }
 .navigation ul li a{
-    color: var(--dark);
+    color: #3f6884;
     font-size: 17px;
     font-weight: 500;
     transition: all 0.5s;
 }
 .navigation ul li a:hover{
-    color: var(--red);
+    color: #3f6884;
 }
 .navigation i{
     cursor: pointer;
@@ -89,27 +89,29 @@ body{
 }
 .home-text .text-h4{
     font-size: 1.5rem;
-    color: var(--red);
+    color: #123360;
     margin-bottom: 1rem;
 }
 .home-text .text-h1{
     font-size: 4rem;
     margin-bottom: 1rem;
     line-height: 4rem;
+    color: white;
 }
 .home-text p{
     margin-bottom: 4rem;
+    color: white;
 }
 .home-btn{
     padding: 15px 45px;
-    background: var(--red);
+    background-color: #123360;
     color: var(--white);
     border-radius: 10px;
     font-weight: 700;
-    transition: all 0.5s;
+    transition: all 1s;
 }
 .home-btn:hover{
-    background: #2394fd;
+    background: #1e539c;
 }
 .home-img img{
     width: 100%;

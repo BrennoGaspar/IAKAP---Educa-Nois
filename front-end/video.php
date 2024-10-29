@@ -36,8 +36,8 @@ if(isset($_GET['codigo']) && is_numeric($_GET['codigo'])) {
             <nav class="navigation">
                 <a href="./home.html" class="logo">Educa <span>Nóis</span></a>
                 <ul class="nav-menu">
-                    <li class="nav-item"><a href="./cursos.php">Cursos</a></li>
-                    <li class="nav-item"><a href="./empresasparceiras.html">Empresas parceiras</a></li>
+                    <li class="nav-item active"><a href="./temas.php">Temas</a></li>
+                    <li class="nav-item"><a href="empresas.html">Empresas parceiras</a></li>
                     <li class="nav-item"><a href="./feedback.html">Feedback</a></li>
                 </ul>
             </nav>
@@ -47,14 +47,11 @@ if(isset($_GET['codigo']) && is_numeric($_GET['codigo'])) {
             <div class="general">
                 <section class="elements">
                     <h2 class='titulo'><?php echo $row["nome"] ?></h2>
-                
-                    <div class="all">
-                        <video width="640" height="360" controls>
-                            <source src="<?php echo $video_path; ?>" type="video/mp4">
-                            Seu navegador não suporta o elemento de vídeo.
-                        </video>
-                        <p class="descricao"><?php echo $row["descricao"] ?></p>
-                    </div>
+                    <video width="640" height="360" controls>
+                        <source src="<?php echo $video_path; ?>" type="video/mp4">
+                        Seu navegador não suporta o elemento de vídeo.
+                    </video>
+                    <p class="descricao"><?php echo $row["descricao"] ?></p>
                 </section>
             </div>
         </main>

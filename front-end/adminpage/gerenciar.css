@@ -1,6 +1,24 @@
+
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
 @import url('https://fonts.cdnfonts.com/css/sprite-graffiti');
+@font-face {
+    font-family: Kollektif;
+    src: url(Kollektif.ttf);
+}
+:root{
+    --red:#0831a1;
+    --white:#fff;
+    --dark:#1e1c2a;
+    --color-primary-1: #fff;
+    --color-primary-2: #76bafa;
+    --color-primary-3: #5b66f8;
+    --color-primary-4: #0400ff;
+    --color-primary-5: #2b6dfc;
+    --color-primary-6: #3d40ff;
 
+    --color-neutral-0: #fff;
+    --color-neutral-1: #1d1d1d;
+}
 *{
     margin: 0;
     padding: 0;
@@ -9,20 +27,7 @@
     list-style: none;
     text-decoration: none;
 }
-:root{
-    --red:#0831a1;
-    --white:#fff;
-    --dark:#1e1c2a;
-}
-
-html, body {
-    height: 100%;
-    margin: 0;
-    padding: 0;
-}
-
 body{
-    color: var(--dark);
     background-color: #3f6884;
 }
 .navigation{
@@ -60,74 +65,62 @@ body{
     transition: all 0.5s;
 }
 .navigation ul li a:hover{
-    color: #2b485b;;
+    color: #2b485b;
 }
 
 .nav-item.active a {
     color: #2b485b;;
 }
 
-
 .navigation i{
     cursor: pointer;
     font-size: 1.5rem;
 }
-.menu{
-    cursor: pointer;
-    display: none;
+.gerenciar_title{
+    padding: 0.5rem;
+    background-repeat: no-repeat;
+    display: flex;  
+    flex-direction: row;
+    gap: 8%;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+    margin-top: 20px; 
 }
-.menu .bar{
-    display: block;
-    width: 28px;
-    height: 3px;
-    border-radius: 3px;
-    background: var(--dark);
-    margin: 5px auto;
-    transition: all 0.3s;
-}
-.menu .bar:nth-child(1),
-.menu .bar:nth-child(3){
-    background: var(--red);
-}
-
-.all{
-    margin: 2%;
-    display: flex;
-    justify-content: space-between;
-}
-
-.descricao{
-    font-family: Arial, Helvetica, sans-serif;
-    font-weight: 550;
-}
-
-.general {
+.total{
+    padding: 2.5rem;
     background-color: #4b7a99;
-    margin: auto;
-    width: 80%;
-    min-height: calc(100vh - 163px); /* Ajusta a altura para compensar o espaço */
-    margin-top: 5%; 
+    background-repeat: no-repeat;
+    flex-direction: row;
+    gap: 8%;
+    color: white;
+    align-items: right;
+    justify-content: top;
+    margin-top: 0%;
+    width: 90vw;
+    height: 83vh;
+}
+.secao{
     display: flex;
-    flex-direction: column;
+    vertical-align:middle;
     justify-content: center;
 }
 
-.elements{
-    text-align: center;
-}
-.titulo{
-    margin-top: -6%;
+.cabecalho{
+    font-family: Arial;
     font-size: 1.5rem;
-    color: white;
+    display: flex;
+    justify-content: space-around;
+    flex: 1;
+    margin-bottom: 8vh;
 }
 
-video{
-    margin: 2.5%;
-    width: 60%;
-    height: 500px;    
-}
-
-.descricao{
-    font-size: 1.3rem;
-    color: white;
+.temas{
+    font-family: Arial;
+    font-size: 1rem;
+    display: flex;
+    justify-content: space-around;
+    flex: 1;
+    margin-bottom: 3vh;
 }

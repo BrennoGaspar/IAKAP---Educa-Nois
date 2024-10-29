@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="add_curso.css">
+    <link rel="shortcut icon" href="../../assets/EduNois.jpg" type="image/x-icon">
+    <title>Adicionar tema | Educa Noís</title>
+</head>
+
+<body>
+<header>
+        <nav class="navigation">
+            <a href="#" class="logo">Educa <span>Nóis</span></a>
+                <ul class="nav-menu">
+                    
+                    <li class="nav-item">
+                        <a href="gerenciarcurso.php">Gerenciar tema</a>
+                    </li>
+    
+                </ul>
+        </nav>
+</header>
+
+<div class="add_title"><h1>ADICIONAR TEMAS</h1></div>
+<section class="secao">
+    <div class="total">
+        <form action="../../back-end/addcurso.php" class="addcursoForm" method="post" enctype="multipart/form-data">
+            <div class="esquerda">
+                <img class="logoeduca" src="../assets/EduNois.png" alt="">
+                    <div class="inputs">
+                        <label for="tituloCurso">Título do tema</label>
+                        <input class="nome" type="text" name="tituloCurso" required>
+                    </div>
+                    <div class="email_tele">
+                        <div class="inputs">
+                            <label for="materia">Matéria</label>
+                            <input class="input_email" type="text" name="materia" required>
+                        </div>
+                    </div>
+                        <div class="inputs">
+                            <label for="descricao">Descrição</label>
+                            <textarea name="descricao" rows="4" cols="500" required></textarea>
+                        </div>  
+
+                        <div class="enviar">
+                            <input type="submit" id="botaoenviar" value="Enviar">
+                        </div>
+            </div>
+            <div class="direita">
+                <div class="feedbackletter">
+                    <h1>Adicionar vídeo do curso</h1>
+                </div>
+                <div class="contatodiv">
+                            <label for="video" class="custom-file-upload">Escolha o vídeo</label>
+                            <input type="file" id="video" name="video" accept="video/mp4" required>
+                </div>
+            </div>
+        </form>
+    </div>
+</section>
+</body>
+</html>

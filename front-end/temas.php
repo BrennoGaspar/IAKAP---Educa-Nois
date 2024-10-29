@@ -20,12 +20,12 @@ $conexao = new PDO( "mysql:host=$servername;dbname=$dbname" , $username  , $pass
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" integrity="sha512-DTOQO9RWCH3ppGqcWaEA1BIZOC6xxalwEsw9c2QQeAIftl+Vegovlnee1c9QX4TctnWMn13TZye+giMm8e2LwA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <link rel="stylesheet" href="curso.css">
+    <link rel="stylesheet" href="temas.css">
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.7.1/jquery.min.js" integrity="sha512-v2CJ7UaYy4JwqLDIrZUI/4hqeoQieOmAZNXBeQyjo21dadnwR+8ZaIJVT8EE2iyI61OV8e6M8PP2/4hpQINQ/g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <script src="https://unpkg.com/scrollreveal"></script>
     <link rel="shortcut icon" href="../assets/EduNois.jpg" type="image/x-icon">
-    <title>Cursos | Educa Nóis</title>
+    <title>Temas | Educa Nóis</title>
 </head>
 <body>
     <header>
@@ -33,10 +33,10 @@ $conexao = new PDO( "mysql:host=$servername;dbname=$dbname" , $username  , $pass
             <a href="home.html" class="logo">Educa <span>Nóis</span></a>
                 <ul class="nav-menu">
                     <li class="nav-item active">
-                        <a href="cursos.php">Cursos</a>
+                        <a href="./temas.php">Temas</a>
                     </li>
                     <li class="nav-item">
-                        <a href="empresasparceiras.html">Empresas Parceiras</a>
+                    <a href="empresas.html">Empresas parceiras</a>
                     </li>
                     <li class="nav-item">
                         <a href="feedback.html">Feedback</a>
@@ -46,7 +46,7 @@ $conexao = new PDO( "mysql:host=$servername;dbname=$dbname" , $username  , $pass
     </header>
     <main>
         <section id="menu2">
-            <h2 class="section-title">Nossos cursos mais procurados</h2>
+            <h2 class="section-title">Temas mais procurados</h2>
 
             <?php
                 while ($linha = $resultado->fetch(PDO::FETCH_ASSOC)) {
@@ -72,8 +72,7 @@ $conexao = new PDO( "mysql:host=$servername;dbname=$dbname" , $username  , $pass
                     
                     echo '</div>';
                 }
-            ?>
-            
+            ?> 
             </div>
         </section> 
     </main>

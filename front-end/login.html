@@ -65,26 +65,32 @@
     </div>
 
     <script>
-        $(document).ready(function(){
-            $('#loginForm').submit(function(event){
+        $(document).ready(function() {
+            $('#loginForm').submit(function(event) {
                 event.preventDefault();
                 var formData = $(this).serialize();
-                $.ajax({
-                    url: '../back-end/login.php',
-                    type: 'POST',
-                    dataType: 'json',
-                    data: formData,
-                    success: function(response) {
-                        if (response.success) {
-                            window.location.href = 'home.html';
-                        } else {
-                            window.alert(response.message); 
+        
+            $.ajax({
+                url: '../back-end/login.php',
+                type: 'POST',
+                dataType: 'json',
+                data: formData,
+                success: function(response) {
+                    if (response.success) {
+                        window.location.href = response.redirect;
+                    } else {
+                        console.error("Erro no login:", response.message);
+                        if (response.error) {
+                            console.error("Detalhes do erro:", response.error);
                         }
-                    },
-                    error: function(xhr, status, error) {
-                        window.alert('Erro ao fazer login: ' + error);
+                        window.alert(response.message);
                     }
-                });
+                },
+                error: function(xhr, status, error) {
+                    console.error("Erro de requisição AJAX:", error);
+                    window.alert('Erro ao fazer login: ' + error);
+                }
+            });
             });
         });
     </script>

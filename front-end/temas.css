@@ -30,8 +30,8 @@ html {
     scroll-behavior: smooth;
 }
 
-body {
-    background-color: var(--red);
+body{
+    background-color: #3f6884;
 }
 
 section {
@@ -67,14 +67,14 @@ section {
 }
 
 .navigation .logo {
-    color: var(--red);
+    color: #3f6884;
     font-size: 1.7rem;
     font-weight: 600;
     font-family: 'Sprite Graffiti', sans-serif;
 }
 
 .navigation .logo span {
-    color: var(--red);
+    color: #3f6884;
     font-family: 'Sprite Graffiti', sans-serif;
 }
 
@@ -85,14 +85,18 @@ section {
 }
 
 .navigation ul li a {
-    color: var(--dark);
+    color: #3f6884;
     font-size: 17px;
     font-weight: 500;
     transition: all 0.5s;
 }
 
 .navigation ul li a:hover {
-    color: var(--red);
+    color: #2b485b;;
+}
+
+.nav-item.active a {
+    color: #2b485b;;
 }
 
 .navigation i,
@@ -184,7 +188,7 @@ section {
 }
 
 .btn-default:hover {
-    background-color: var(--color-primary-3);
+    background-color: #2b485b;
 }
 
 @media screen and (max-width: 768px) {
