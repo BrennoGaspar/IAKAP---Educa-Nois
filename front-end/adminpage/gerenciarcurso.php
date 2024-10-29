@@ -50,7 +50,7 @@ $conexao = new PDO( "mysql:host=$servername;dbname=$dbname" , $username  , $pass
                 echo '<div class="temas">';
                     echo '<div><p>'. $linha["nome"] .'</p></div>';
                     echo '<div><p>'. $linha["descricao"] .'</p></div>';
-                    echo '<div><a href="../../back-end/delete_curso.php?codigo='. $linha["codigo"] .'">Deletar</a></div>';
+                    echo '<div><a href="../../back-end/delete_curso.php?codigo='. $linha["codigo"] .'">❌</a></div>';
                 echo '</div>';
             }
         ?>
