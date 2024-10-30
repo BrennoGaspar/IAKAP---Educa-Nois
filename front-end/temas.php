@@ -45,36 +45,32 @@ $conexao = new PDO( "mysql:host=$servername;dbname=$dbname" , $username  , $pass
         </nav>
     </header>
     <main>
-        <section id="menu2">
-            <h2 class="section-title">Temas mais procurados</h2>
+    <section id="menu2">
+    <h2 class="section-title">Temas mais procurados</h2>
 
-            <?php
-                while ($linha = $resultado->fetch(PDO::FETCH_ASSOC)) {
-                    echo '<div id="dishes">';
-                    echo '<div class="dish">';
-                   
-                    echo '<h3 class="dish-title">' . $linha["nome"] . '</h3>';
-
-                    echo '<span class="dish-img">';
-                    echo '<img src="https://i.ytimg.com/vi/Ds1n6aHchRU/maxresdefault.jpg" >';
-                    echo '</span>';
-
-                    echo '<div class="dish-rate">';
-                    echo '<h4>'.$linha["descricao"].'</h4>';
-                    echo '</div>';
-
-                    echo '<div class="dish-price">';
-                    echo '<h4>Gratuito</h4>';
-                    echo '</div>';
-                    echo '<button class="btn-default">';
-                    echo '<a href="./video.php?codigo='.$linha["codigo"].'"> Saiba Mais </a>';
-                    echo '</button>';
-                    
-                    echo '</div>';
-                }
-            ?> 
-            </div>
-        </section> 
+    <!-- Contêiner principal, fora do loop -->
+    <div id="dishes">
+        <?php
+            while ($linha = $resultado->fetch(PDO::FETCH_ASSOC)) {
+                echo '<div class="dish">'; // Cartão único dentro do loop
+                echo '<h3 class="dish-title">' . $linha["nome"] . '</h3>';
+                echo '<span class="dish-img">';
+                echo '<img src="https://i.ytimg.com/vi/Ds1n6aHchRU/maxresdefault.jpg">';
+                echo '</span>';
+                echo '<div class="dish-rate">';
+                echo '<h4>' . $linha["descricao"] . '</h4>';
+                echo '</div>';
+                echo '<div class="dish-price">';
+                echo '<h4>Gratuito</h4>';
+                echo '</div>';
+                echo '<button class="btn-default">';
+                echo '<a href="./video.php?codigo=' . $linha["codigo"] . '"> Saiba Mais </a>';
+                echo '</button>';
+                echo '</div>'; // Fechamento do cartão individual
+            }
+        ?>
+    </div> <!-- Fechamento do contêiner principal -->
+</section>
     </main>
     <script>
         $(document).ready(function() {
