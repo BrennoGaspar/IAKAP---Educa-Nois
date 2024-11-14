@@ -24,14 +24,20 @@ $conexao = new PDO( "mysql:host=$servername;dbname=$dbname" , $username  , $pass
 
 <body>
 <header>
-        <nav class="navigation">
+<nav class="navigation">
             <a href="#" class="logo">Educa <span>Nóis</span></a>
                 <ul class="nav-menu">
-                   
+                    
                     <li class="nav-item">
                         <a href="add_curso.html">Adicionar tema</a>
                     </li>
-                
+                    <li class="nav-item">
+                        <a href="gerenciarcurso.php">Gerenciar tema</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="cursos.php">Temas</a>
+                    </li>
+    
                 </ul>
         </nav>
 </header>
@@ -50,7 +56,7 @@ $conexao = new PDO( "mysql:host=$servername;dbname=$dbname" , $username  , $pass
                 echo '<div class="temas">';
                     echo '<div><p>'. $linha["nome"] .'</p></div>';
                     echo '<div><p>'. $linha["descricao"] .'</p></div>';
-                    echo '<div><a href="../../back-end/delete_curso.php?codigo='. $linha["codigo"] .'">❌</a></div>';
+                    echo '<div><a href="../../back-end/delete_curso.php?codigocursos='. $linha["codigocursos"] .'">❌</a></div>';
                 echo '</div>';
             }
         ?>

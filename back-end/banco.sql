@@ -24,14 +24,24 @@ CREATE TABLE IF NOT EXISTS professores(
 );
 
 CREATE TABLE IF NOT EXISTS cursos(
-    codigo INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    codigocursos INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
     nome varchar(200) NOT NULL,
     descricao varchar(300) NOT NULL,
+    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+);
+
+CREATE TABLE IF NOT EXISTS assuntos(
+    codigoassuntos INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    codigocursos INT NOT NULL,
+    nome varchar(100) NOT NULL,
+    descricao varchar(300) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS videos(
+    codigovideos INT PRIMARY KEY NOT NULL AUTO_INCREMENT,
+    codigoassuntos INT NOT NULL,
+    codigocursos INT NOT NULL,
     nome_video varchar(1000) NOT NULL,
     file_size BIGINT NOT NULL,
-    file_type VARCHAR(100) NOT NULL,
-    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-)
-
-
-INSERT INTO cursos (nome, descricao, nome_video, file_size, file_type) VALUES ('nome teste', 'descricao teste', 'v12044gd0000co7mq5fog65m77lv7pm0.mp4', '8118188' ,'video/mp4')
+    file_type VARCHAR(100) NOT NULL
+);

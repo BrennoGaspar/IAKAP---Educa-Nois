@@ -12,16 +12,15 @@ if ($conn->connect_error) {
 }
 
 // Recupera o ID do vídeo da URL
-if(isset($_GET['codigo']) && is_numeric($_GET['codigo'])) {
-    $video_id = $_GET['codigo'];
+if(isset($_GET['codigocursos']) && is_numeric($_GET['codigocursos']) && isset($_GET['codigoassuntos']) && is_numeric($_GET['codigoassuntos'])) {
+    $codigocursos = $_GET['codigocursos'];
+    $codigoassuntos = $_GET['codigoassuntos'];
 
     // Consulta o banco de dados para obter o caminho do vídeo
-    $sql = "SELECT * FROM cursos WHERE codigo = $video_id";
+    $sql = "SELECT * FROM videos WHERE codigocursos = $codigocursos AND codigoassuntos = $codigoassuntos";
     $result = $conn->query($sql);
 
     if ($result->num_rows > 0) {
-        $row = $result->fetch_assoc();
-        $video_path = "../back-end/uploads/" . $row["nome_video"];
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
@@ -44,22 +43,26 @@ if(isset($_GET['codigo']) && is_numeric($_GET['codigo'])) {
         </header>
         
         <main>
-            <div class="general">
-                <section class="elements">
-                    <h2 class='titulo'><?php echo $row["nome"] ?></h2>
-                    <video width="640" height="360" controls>
-                        <source src="<?php echo $video_path; ?>" type="video/mp4">
-                        Seu navegador não suporta o elemento de vídeo.
-                    </video>
-                    <p class="descricao"><?php echo $row["descricao"] ?></p>
-                </section>
-            </div>
+            <?php
+            while ($row = $result->fetch_assoc()) {
+                $video_path = "../back-end/uploads/" . $row["nome_video"];
+                echo '<div class="general">';
+                echo '<section class="elements">';
+                echo '<h2 class="titulo">'. $row["nome_video"] .'</h2>';
+                echo '<video width="640" height="360" controls>';
+                echo '<source src="' . $video_path . '" type="video/mp4">'; // Corrigido
+                echo 'Seu navegador não suporta o elemento de vídeo.';
+                echo '</video>';
+                echo '</section>';
+                echo '</div>';
+            }
+            ?>
         </main>
 </body>
 </html>
 <?php
     } else {
-        echo "Vídeo não encontrado.";
+        echo "<p>Nenhum vídeo encontrado.</p>";
     }
 } else {
     echo "ID do vídeo inválido.";

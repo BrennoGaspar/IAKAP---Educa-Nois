@@ -1,0 +1,197 @@
+
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.cdnfonts.com/css/sprite-graffiti');
+@font-face {
+    font-family: Kollektif;
+    src: url(Kollektif.ttf);
+}
+:root{
+    --red:#0831a1;
+    --white:#fff;
+    --dark:#1e1c2a;
+    --color-primary-1: #fff;
+    --color-primary-2: #76bafa;
+    --color-primary-3: #5b66f8;
+    --color-primary-4: #0400ff;
+    --color-primary-5: #2b6dfc;
+    --color-primary-6: #3d40ff;
+
+    --color-neutral-0: #fff;
+    --color-neutral-1: #1d1d1d;
+}
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    list-style: none;
+    text-decoration: none;
+}
+body{
+    background-color: #3f6884;
+}
+.navigation{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 40px;
+    box-shadow: 0 0.1rem 0.5rem #ccc;
+    width: 100%;
+    background: var(--white);
+    transition: all 0.5s;
+    position: relative;
+}
+.navigation .logo{
+    color: #3f6884;
+    font-size: 1.7rem;
+    font-weight: 600;
+}
+.logo{
+    font-family: 'Sprite Graffiti', sans-serif;
+}
+.logo span{
+    color: #3f6884;
+    font-family: 'Sprite Graffiti', sans-serif;                           
+}
+.navigation ul{
+    display: flex;
+    align-items: center;
+    gap: 5rem;
+}
+.navigation ul li a{
+    color: #3f6884;
+    font-size: 17px;
+    font-weight: 500;
+    transition: all 0.5s;
+}
+.navigation ul li a:hover{
+    color: #2b485b;
+}
+
+.nav-item.active a {
+    color: #2b485b;;
+}
+
+.navigation i{
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+
+.add_title{
+        padding: 0.5rem;
+        background-repeat: no-repeat;
+        display: flex;  
+        flex-direction: row;
+        gap: 8%;
+        color: white;
+        align-items: center;
+        justify-content: center;
+        height: 100px;
+        margin-top: 20px; 
+}
+
+.link {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    top: 20px; /* Ajuste a posição vertical */
+    width: 100%;
+}
+
+.button-link a {
+    display: inline-block;
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+    background-color: var(--color-primary-5); /* Cor do botão */
+    border-radius: 8px;
+    text-decoration: none;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease;
+}
+
+.button-link a:hover {
+    background-color: #2b485b;
+}
+
+.total{
+    margin-top: 2.5%;
+}
+
+.total form{
+    background-color: #4b7a99;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: row;
+    gap: 8%;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1%;
+    width: 90vw;
+    height: 75vh;
+}
+.secao{
+    display: flex;
+    vertical-align:middle;
+    justify-content: center;
+}
+
+h2{
+    font: large;
+    text-align: center;
+    margin-bottom: 2%;
+}
+h1{
+    font-size: 44px;
+    width: 100%;
+    text-align: center;
+}
+.feedbackletter{
+    width: 100%;
+}
+
+.contato{
+    font-size: 22px;
+    text-align: justify;
+    width: 100%;
+}
+.contatodiv{
+    width: 100%;
+}
+
+.icon{
+    width: 45px;
+}
+
+.logoeduca{
+    width: 200px;
+    margin: 0 auto;
+}
+
+.enviar{
+    margin-top: 3%;
+    display: flex;
+    justify-content: center;
+}
+
+input, textarea {
+    border-radius: 15px;
+    background-color: #CAE8FF;
+    border: none;
+    box-sizing: border-box;
+    outline: none;
+    padding: 0 15px;
+    color: #1d1d1d;  /* Cor do texto */
+    font-size: 1rem;  /* Tamanho do texto */
+}
+
+input {
+    height: 69px;
+}
+
+label{
+    font-size: 1.3rem;
+}

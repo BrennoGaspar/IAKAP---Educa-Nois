@@ -1,0 +1,208 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.cdnfonts.com/css/sprite-graffiti');
+
+:root {
+    --red: #004AAD;
+    --white: #fff;
+    --dark: #1e1c2a;
+
+    --color-primary-1: #fff9ea;
+    --color-primary-2: #76bafa;
+    --color-primary-3: #77f4f8;
+    --color-primary-4: #00ccff;
+    --color-primary-5: #458fff;
+    --color-primary-6: #0957e9;
+
+    --color-neutral-0: #fff;
+    --color-neutral-1: #1d1d1d;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    list-style: none;
+    text-decoration: none;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body{
+    background-color: #3f6884;
+}
+
+section {
+    padding: 100px 10%;
+}
+
+.section-title {
+    color: var(--white);
+    font-size: 1.563rem;
+}
+
+.navigation {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 15px 40px;
+    box-shadow: 0 0.1rem 0.5rem #ccc;
+    width: 100%;
+    background: var(--white);
+    transition: all 0.5s;
+    position: fixed;
+}
+.navigation.fixed {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    transition: top 0.3s ease-in-out; 
+}
+
+.navigation.hidden {
+    top: -100px;
+}
+
+.navigation .logo {
+    color: #3f6884;
+    font-size: 1.7rem;
+    font-weight: 600;
+    font-family: 'Sprite Graffiti', sans-serif;
+}
+
+.navigation .logo span {
+    color: #3f6884;
+    font-family: 'Sprite Graffiti', sans-serif;
+}
+
+.navigation ul {
+    display: flex;
+    align-items: center;
+    gap: 5rem;
+}
+
+.navigation ul li a {
+    color: #3f6884;
+    font-size: 17px;
+    font-weight: 500;
+    transition: all 0.5s;
+}
+
+.navigation ul li a:hover {
+    color: #2b485b;;
+}
+
+.nav-item.active a {
+    color: #2b485b;;
+}
+
+.navigation i,
+
+.menu .bar {
+    cursor: pointer;
+    font-size: 1.5rem;
+}
+
+.menu {
+    cursor: pointer;
+    display: none;
+}
+
+.menu .bar {
+    display: block;
+    width: 28px;
+    height: 3px;
+    border-radius: 3px;
+    background: var(--dark);
+    margin: 7px auto;
+    transition: all 0.3s;
+}
+
+.menu .bar:nth-child(1),
+.menu .bar:nth-child(3) {
+    background: var(--red);
+}
+
+#menu2 {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#dishes {
+    display: flex;
+    flex-wrap: wrap; 
+    justify-content: center; /* Centraliza horizontalmente os itens */
+    gap: 65px; 
+    margin: 35px auto; /* Adiciona margem superior e centraliza horizontalmente */
+    max-width: 1200px; /* Largura máxima para a div */
+    padding: 0 10px; /* Adiciona um pouco de espaço nas laterais */
+}
+
+.dish {
+    width: 300px; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: space-between;
+    border-radius: 20px;
+    padding: 20px;
+    background-color: var(--color-neutral-0);
+    box-shadow: 0px 0px 12px 4px rgba(0, 0, 0, 0.1);
+    position: relative;
+    overflow: hidden;
+    box-sizing: border-box; 
+}
+
+.dish img {
+    max-width: 100%; 
+    height: auto;
+}
+
+.dish-title, .dish-rate, .dish-price, .btn-default {
+    text-align: center;
+    width: 100%;
+}
+
+.btn-default {
+    margin-top: 10px; 
+}
+
+.btn-default {
+    border: none;
+    text-align: center;
+    background-color: var(--color-primary-5);
+    font-size: 15px;
+    border-radius: 12px;
+    padding: 12px 16px;
+    font-weight: 650;
+    box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    transition: background-color .3s ease;
+}
+
+.btn-default a {
+    color: white;
+}
+
+.btn-default:hover {
+    background-color: #2b485b;
+}
+
+@media screen and (max-width: 768px) {
+    .navigation ul {
+        display: none;
+    }
+
+    .menu {
+        display: block;
+    }
+
+    #dishes {
+        padding: 0 20px;
+    }
+}

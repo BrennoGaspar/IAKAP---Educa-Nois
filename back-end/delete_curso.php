@@ -10,11 +10,11 @@ try {
     $conexao->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 
     // Verifica se o ID foi passado pela URL
-    if (isset($_GET['codigo'])) {
-        $id = $_GET['codigo'];
+    if (isset($_GET['codigocursos'])) {
+        $id = $_GET['codigocursos'];
 
         // Prepara e executa a exclusão do tema
-        $sql = "DELETE FROM cursos WHERE codigo = :codigo";
+        $sql = "DELETE FROM cursos WHERE codigocursos = :codigo";
         $stmt = $conexao->prepare($sql);
         $stmt->bindParam(':codigo', $id, PDO::PARAM_INT);
         $stmt->execute();

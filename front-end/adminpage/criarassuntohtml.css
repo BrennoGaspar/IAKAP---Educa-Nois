@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.cdnfonts.com/css/sprite-graffiti');
+
+:root {
+    --red: #0831a1;
+    --white: #fff;
+    --dark: #1e1c2a;
+    --color-primary-5: #2b6dfc;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+    list-style: none;
+    text-decoration: none;
+}
+
+body {
+    background-color: #3f6884;
+}
+
+.navigation {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 18px 40px;
+    background: var(--white);
+    box-shadow: 0 0.1rem 0.5rem #ccc;
+}
+
+.navigation .logo {
+    color: #3f6884;
+    font-size: 1.7rem;
+    font-weight: 600;
+    font-family: 'Sprite Graffiti', sans-serif;
+}
+
+.logo span {
+    color: #3f6884;
+    font-family: 'Sprite Graffiti', sans-serif;
+}
+
+.navigation ul {
+    display: flex;
+    align-items: center;
+    gap: 5rem;
+}
+
+.navigation ul li a {
+    color: #3f6884;
+    font-size: 17px;
+    font-weight: 500;
+}
+
+.add_title {
+    padding: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100px;
+    color: white;
+    margin-top: 20px;
+}
+
+.secao {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+.total {
+    background-color: #4b7a99;
+    border-radius: 8px;
+    padding: 40px;
+    max-width: 500px;
+    width: 100%;
+}
+
+h1 {
+    font-size: 44px;
+    text-align: center;
+}
+
+.inputs {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+label {
+    font-size: 1.3rem;
+    color: var(--white);
+}
+
+input[type="text"] {
+    padding: 10px;
+    border-radius: 8px;
+    background-color: #CAE8FF;
+    border: none;
+    outline: none;
+    font-size: 1rem;
+}
+
+.submit-btn {
+    padding: 12px 24px;
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+    background-color: var(--color-primary-5);
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    text-align: center;
+}
+
+.submit-btn:hover {
+    background-color: #2b485b;
+}

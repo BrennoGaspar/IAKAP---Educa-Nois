@@ -17,6 +17,9 @@
                     <li class="nav-item">
                         <a href="gerenciarcurso.php">Gerenciar tema</a>
                     </li>
+                    <li class="nav-item">
+                        <a href="cursos.php">Temas</a>
+                    </li>
     
                 </ul>
         </nav>
@@ -28,33 +31,17 @@
         <form action="../../back-end/addcurso.php" class="addcursoForm" method="post" enctype="multipart/form-data">
             <div class="esquerda">
                 <img class="logoeduca" src="../assets/EduNois.png" alt="">
-                    <div class="inputs">
-                        <label for="tituloCurso">Título do tema</label>
-                        <input class="nome" type="text" name="tituloCurso" required>
-                    </div>
-                    <div class="email_tele">
                         <div class="inputs">
-                            <label for="materia">Matéria</label>
-                            <input class="input_email" type="text" name="materia" required>
+                            <label for="tituloCurso">Título do tema</label>
+                            <input class="nome" type="text" name="tituloCurso" required>
                         </div>
-                    </div>
                         <div class="inputs">
                             <label for="descricao">Descrição</label>
                             <textarea name="descricao" rows="4" cols="500" required></textarea>
-                        </div>  
-
+                        </div>
                         <div class="enviar">
                             <input type="submit" id="botaoenviar" value="Enviar">
                         </div>
-            </div>
-            <div class="direita">
-                <div class="feedbackletter">
-                    <h1>Adicionar vídeo do curso</h1>
-                </div>
-                <div class="contatodiv">
-                            <label for="video" class="custom-file-upload">Escolha o vídeo</label>
-                            <input type="file" id="video" name="video" accept="video/mp4" required>
-                </div>
             </div>
         </form>
     </div>

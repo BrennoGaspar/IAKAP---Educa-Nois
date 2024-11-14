@@ -64,7 +64,7 @@ $conexao = new PDO( "mysql:host=$servername;dbname=$dbname" , $username  , $pass
                 echo '<h4>Gratuito</h4>';
                 echo '</div>';
                 echo '<button class="btn-default">';
-                echo '<a href="./video.php?codigo=' . $linha["codigo"] . '"> Saiba Mais </a>';
+                echo '<a href="./assuntos.php?codigocursos=' . $linha["codigocursos"] . '"> Saiba Mais </a>';
                 echo '</button>';
                 echo '</div>'; // Fechamento do cartão individual
             }
